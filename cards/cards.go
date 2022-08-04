@@ -1,11 +1,11 @@
 package cards
 
 type Card struct {
-	name         string // 7, 8, 9, 10, knight, jack , queen, king
-	type_of_card string // clover, diamond, heart, spade, tarock
-	img          string // "./img/heart5.png", ...
-	power        int    // 1...8 for non tarock cards, 1...22 for tarocks
-	points       int    // value of points at the end of the game
+	Name         string // 7, 8, 9, 10, knight, jack , queen, king
+	Type_of_card string // clover, diamond, heart, spade, tarock
+	Img          string // "./img/heart5.png", ...
+	Power        int    // 1...8 for non tarock cards, 1...22 for tarocks
+	Points       int    // value of points at the end of the game
 }
 
 var clover1 = Card{"7", "clover", "./img/clover1.png", 1, 1}
@@ -69,7 +69,7 @@ var tarock20 = Card{"trump", "tarock", "./img/tarock20.png", 20, 1}
 var tarock21 = Card{"mond", "tarock", "./img/tarock21.png", 21, 5}
 var tarock22 = Card{"trump", "tarock", "./img/tarock22.png", 22, 5}
 
-var Deck = []Card{
+var AllCards = []Card{
 	clover1, clover2, clover3, clover4, clover5, clover6, clover7, clover8,
 	diamond1, diamond2, diamond3, diamond4, diamond5, diamond6, diamond7, diamond8,
 	heart1, heart2, heart3, heart4, heart5, heart6, heart7, heart8,
