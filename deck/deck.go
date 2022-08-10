@@ -2,6 +2,7 @@ package deck
 
 import (
 	"math/rand"
+	"sort"
 	"time"
 
 	"github.com/janmerhar/tarock/cards"
@@ -37,4 +38,27 @@ func (deck *Deck) Draw_an_cards(a int, n int) []cards.Card {
 	// Removing drawn cards from deck
 	deck.Cards = append(deck.Cards[:a], deck.Cards[a+n:]...)
 	return subslice
+}
+
+// Sort cards in order by colors: tarock, heart, spade, diamond, clover
+// and then by power
+func (deck *Deck) Sort_cards() {
+	// Order of sorting elements by color
+	priority_by_color := map[string]int{
+		"tarock":  5,
+		"heart":   4,
+		"spade":   3,
+		"diamond": 2,
+		"clover":  1,
+	}
+
+	sort.Slice(deck.Cards, func(a, b int) bool {
+		// Sort cards by color
+		if deck.Cards[a].Type_of_card != deck.Cards[b].Type_of_card {
+			return priority_by_color[deck.Cards[a].Type_of_card] > priority_by_color[deck.Cards[b].Type_of_card]
+		}
+		// and then by power
+		return deck.Cards[a].Power > deck.Cards[b].Power
+	})
+
 }
