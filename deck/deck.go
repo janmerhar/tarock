@@ -12,6 +12,12 @@ type Deck struct {
 	Cards []cards.Card // current cards in deck of 54
 }
 
+// Constructor for Deck
+// https://stackoverflow.com/questions/18125625/constructors-in-go
+func NewDeck() *Deck {
+	return &Deck{append([]cards.Card{}, cards.AllCards...)}
+}
+
 // Randomly shuffle contents of []deck.Deck
 func (deck *Deck) Shuffle() {
 	rand.Seed(time.Now().UnixNano())
@@ -62,3 +68,5 @@ func (deck *Deck) Sort_cards() {
 	})
 
 }
+
+// Add cards to deck
