@@ -12,10 +12,14 @@ type Deck struct {
 	Cards []cards.Card // current cards in deck of 54
 }
 
-// Constructor for Deck
+// Constructors for Deck
 // https://stackoverflow.com/questions/18125625/constructors-in-go
 func NewDeck() *Deck {
 	return &Deck{append([]cards.Card{}, cards.AllCards...)}
+}
+
+func NewCustomDeck(new_cards []cards.Card) *Deck {
+	return &Deck{append([]cards.Card{}, new_cards...)}
 }
 
 // Randomly shuffle contents of []deck.Deck
