@@ -73,4 +73,7 @@ func (deck *Deck) Sort_cards() {
 
 }
 
-// Add cards to deck
+// Add cards to deck at index
+func (deck *Deck) Add_to_deck(new_cards []cards.Card) {
+	deck.Cards = append(deck.Cards, new_cards...)
+}
