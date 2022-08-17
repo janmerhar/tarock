@@ -23,5 +23,5 @@ func (p *Player) Remove_from_hand(cardIndex int) cards.Card {
 // Receive cards from talon/dealer
 // by providing slice of cards to be added to player's hand
 func (p *Player) Add_to_hand(new_cards []cards.Card) {
-	p.Hand.Cards = append(p.Hand.Cards, new_cards...)
+	p.Hand.Add_to_deck(new_cards)
 }
