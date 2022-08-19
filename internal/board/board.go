@@ -1,7 +1,7 @@
 package board
 
 import (
-	"github.com/janmerhar/tarock/deck"
+	"github.com/janmerhar/tarock/internal/deck"
 	"github.com/janmerhar/tarock/player"
 	"github.com/janmerhar/tarock/scoreboard"
 )
