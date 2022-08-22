@@ -2,8 +2,8 @@ package board
 
 import (
 	"github.com/janmerhar/tarock/internal/deck"
-	"github.com/janmerhar/tarock/player"
-	"github.com/janmerhar/tarock/scoreboard"
+	"github.com/janmerhar/tarock/internal/player"
+	"github.com/janmerhar/tarock/internal/scoreboard"
 )
 
 type Board struct {
