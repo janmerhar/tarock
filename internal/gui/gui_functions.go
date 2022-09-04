@@ -1,19 +1,14 @@
 package gui
 
-import (
-	"fyne.io/fyne/v2"
-)
+import "github.com/hajimehoshi/ebiten/v2"
 
-func Load_image(img_path string) fyne.Resource {
-	icon, _ := fyne.LoadResourceFromPath(img_path)
-	return icon
-}
+func DrawEntireDeckTop(screen *ebiten.Image, card_back *ebiten.Image) {
+	card_back_op := &ebiten.DrawImageOptions{}
+	card_back_op.GeoM.Translate(float64(1280-15*75), float64(0))
+	card_back_op.GeoM.Scale(.25, .25)
 
-func Create_game_window(a fyne.App) fyne.Window {
-	w := a.NewWindow("Solitaire")
-	w.SetPadded(false)
-	w.CenterOnScreen()
-	w.Resize(fyne.NewSize(1280, 720))
-
-	return w
+	for i := 0; i < 16; i++ {
+		screen.DrawImage(card_back, card_back_op)
+		card_back_op.GeoM.Translate(float64(75), float64(0))
+	}
 }
